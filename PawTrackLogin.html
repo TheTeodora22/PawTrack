@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autentificare și înregistrare pe platforma PawTrack.">
+    <title>PawTrack | Login/Înregistrare</title>
+    <link rel="icon" type="image/x-icon" href="DogIcon.png">
+    <link rel="stylesheet" href="PawTrack.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="PawTrackLogo.png" alt="PawTrack logo">
+    </header>
+    <nav>
+        <ul class="nav__link">
+            <li class="hideOnMobile"><a href="PawTrack.html">Acasă</a></li>
+            <li class="hideOnMobile"><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu">
+                    <li><a href="#">Nutriție</a></li>
+                    <li><a href="#">Vaccinuri</a></li>
+                    <li><a href="#">Probleme Comune</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"><a href="PawTrackBunastare.html">Bunăstare</a>
+                <ul class="submenu">
+                    <li><a href="#">Activități</a></li>
+                    <li><a href="#">Antrenament</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Login/Înregistrare</h1>
+        <form>
+            <label for="username">Nume de utilizator:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Parolă:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Autentificare</button>
+        </form>
+        <p>Nu ai un cont? <a href="PawTrackRegister.html">Înregistrează-te aici</a>.</p>
+    </section>
+    <footer>
+        <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+</html>

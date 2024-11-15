@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creează un cont pe platforma PawTrack pentru a accesa informații detaliate despre sănătatea și bunăstarea câinelui tău.">
+    <title>PawTrack | Înregistrare</title>
+    <link rel="icon" type="image/x-icon" href="DogIcon.png">
+    <link rel="stylesheet" href="PawTrack.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="PawTrackLogo.png" alt="PawTrack logo">
+    </header>
+    <nav>
+        <ul class="nav__link">
+            <li class="hideOnMobile"><a href="PawTrack.html">Acasă</a></li>
+            <li class="hideOnMobile"><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu">
+                    <li><a href="#">Nutriție</a></li>
+                    <li><a href="#">Vaccinuri</a></li>
+                    <li><a href="#">Probleme Comune</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"><a href="PawTrackBunastare.html">Bunăstare</a>
+                <ul class="submenu">
+                    <li><a href="#">Activități</a></li>
+                    <li><a href="#">Antrenament</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Înregistrare</h1>
+        <form action="register.php" method="post">
+            <label for="fullname">Nume complet:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            
+            <label for="username">Nume de utilizator:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Parolă:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm_password">Confirmă parola:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            
+            <label for="dog_name">Nume câine:</label>
+            <input type="text" id="dog_name" name="dog_name">
+            
+            <label for="dog_breed">Rasă câine:</label>
+            <input type="text" id="dog_breed" name="dog_breed">
+            
+            <label for="dog_age">Vârstă câine (în ani):</label>
+            <input type="number" id="dog_age" name="dog_age" min="0" step="1">
+            
+            <button type="submit">Creează Cont</button>
+        </form>
+        <p>Ai deja un cont? <a href="login.html">Autentifică-te aici</a>.</p>
+    </section>
+    <footer>
+        <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+</html>

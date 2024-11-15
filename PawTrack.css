@@ -1,0 +1,113 @@
+*
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #3D3A3A;
+}
+body
+{
+    min-width: 100%;
+    min-height: 100%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    background-color:  #F3E9DC;
+}
+header
+{
+    background-color: #D8B59E;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    height: 12vh;
+    width: 100%;
+    border-radius: 10px;
+}
+.logo
+{
+    width: 10%;
+    user-select: none;
+
+}
+.nav__link
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+    
+}
+.nav__link ul
+{
+    list-style: none;
+    user-select: none;
+    
+}
+.nav__link li
+{
+    height: 50px;
+    padding: 0px 20px;
+    position: relative;
+    
+}
+.nav__link li a
+{
+    transition: all 0.3s ease 0s;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+.nav__link li a:hover
+{
+    color: aquamarine;
+}
+.nav__link li,a
+{
+    font-family: 'Montserrat', serif;
+    font-weight: 500;
+    font-size: 1vw;
+    text-decoration: none;
+    
+}
+.submenu {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 35px;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
+.nav__link li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 60px;
+}
+.submenu li {
+    float: none;
+    width: 150%;
+    padding-bottom: 5px;
+    
+}
+.submenu a:hover {
+    color: #000000;
+}
+.submenu a {
+    text-shadow: 2px 2px 5px black;
+    border-radius: 5%;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    line-height: 40px;
+}
