@@ -43,6 +43,20 @@ header
     user-select: none;
 
 }
+@media (max-width: 1300px)
+{
+    .logo
+    {
+        width: 20%;
+    }
+}
+@media (max-width: 650px)
+{
+    .logo
+    {
+        width: 40%;
+    }
+}
 .menu-toggle
 {
     cursor: pointer;
@@ -268,20 +282,20 @@ nav
 
 @media (max-width: 480px) {
     .logo {
-        width: 40%; /* Larger logo for small screens */
+        width: 40%; 
     }
 
     .nav__link li a {
-        font-size: 16px; /* Adjust font size */
+        font-size: 16px; 
     }
 
     .submenu li {
-        width: 100%; /* Full width for submenus */
+        width: 100%; 
         padding: 10px 5px;
     }
 
     .submenu a {
-        font-size: 14px; /* Adjust submenu font size */
+        font-size: 14px;
     }
 
 }
@@ -346,14 +360,13 @@ nav
 }
 
 
-/* Highlighting sections */
 .container h2 {
     border-bottom: 2px solid #9A7E6F;
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .main {
         padding: 15px;

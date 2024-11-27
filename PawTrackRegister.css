@@ -43,6 +43,20 @@ header
     user-select: none;
 
 }
+@media (max-width: 1300px)
+{
+    .logo
+    {
+        width: 20%;
+    }
+}
+@media (max-width: 850px)
+{
+    .logo
+    {
+        width: 30%;
+    }
+}
 .menu-toggle
 {
     cursor: pointer;
@@ -396,25 +410,34 @@ section .autentificare p {
 
 @media (max-width: 1024px) {
     section {
-        width: 40vw;
+        width: 70vw;
         height: auto;
         padding: 20px 30px;
     }
 
     section h1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     section .input-box input {
         font-size: 14px;
     }
+    section .input-box 
+    {
+        font-size: 26px;
+    }
 
     section form button {
-        font-size: 14px;
+        font-size: 22px;
+        height: 60px;
+        margin-top: 40px;
     }
 
     section .autentificare p {
-        font-size: 16px;
+        font-size: 24px;
+    }
+    section .autentificare p a {
+        font-size: 24px;
     }
 }
 
@@ -429,20 +452,23 @@ section .autentificare p {
     }
 
     section .input-box {
-        margin: 20px 0;
+        margin: 25px 0;
     }
 
     section .input-box input {
         font-size: 14px;
     }
+    section .input-box  {
+        font-size: 20px;
+    }
 
     section form button {
-        font-size: 14px;
-        height: 40px;
+        font-size: 16px;
+        height: 60px;
     }
 
     section .autentificare p {
-        font-size: 14px;
+        font-size: 20px;
     }
 }
 
