@@ -4,45 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Autentificare și înregistrare pe platforma PawTrack.">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>PawTrack | Login/Înregistrare</title>
     <link rel="icon" type="image/x-icon" href="DogIcon.png">
-    <link rel="stylesheet" href="PawTrack.css">
+    <link rel="stylesheet" href="PawTrackLogin.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="PawTrackLogo.png" alt="PawTrack logo">
+        <img class="logo" src="2.png" alt="PawTrack logo">
     </header>
     <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </label>
         <ul class="nav__link">
-            <li class="hideOnMobile"><a href="PawTrack.html">Acasă</a></li>
-            <li class="hideOnMobile"><a href="PawTrackSanatate.html">Sănătate</a>
-                <ul class="submenu">
-                    <li><a href="#">Nutriție</a></li>
-                    <li><a href="#">Vaccinuri</a></li>
-                    <li><a href="#">Probleme Comune</a></li>
+            <li><a href="PawTrack.html">Acasă</a></li>
+            <li><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu" id="sanatate">
+                    <li><a href="PawTrackSanatate.html#nutritie">Nutriție</a></li>
+                    <li><a href="PawTrackSanatate.html#vaccinuri">Vaccinuri</a></li>
+                    <li><a href="PawTrackSanatate.html#probleme-comune">Probleme Comune</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackBunastare.html">Bunăstare</a>
+            <li><a href="PawTrackBunastare.html">Bunăstare</a>
                 <ul class="submenu">
-                    <li><a href="#">Activități</a></li>
-                    <li><a href="#">Antrenament</a></li>
+                    <li><a href="PawTrackBunastare.html#activitati">Activități</a></li>
+                    <li><a href="PawTrackBunastare.html#antrenament">Antrenament</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+            <li><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
         </ul>
     </nav>
-    <section>
-        <h1>Login/Înregistrare</h1>
-        <form>
-            <label for="username">Nume de utilizator:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Parolă:</label>
-            <input type="password" id="password" name="password" required>
+    <div class="main">
+        <section>
+            <h1>Login</h1>
+            <form>
+                <div class="input-box">
+                    <input type="text" id="username" placeholder="Username" required>
+                        <i class='bx bxs-user' ></i>
+                </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Parola" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Tine-ma minte</label>
+                <a href="#">Ai uitat parola?</a>
+            </div>
             <button type="submit">Autentificare</button>
         </form>
-        <p>Nu ai un cont? <a href="PawTrackRegister.html">Înregistrează-te aici</a>.</p>
-    </section>
+        <div class="inregistrare">
+            <p>Nu ai un cont? <a href="PawTrackRegister.html">Înregistrează-te aici</a>.</p>
+        </div>
+        </section>
+    </div>
     <footer>
+        <ul class="logos">
+            <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+            <li><a href="#"><i class='bx bxs-envelope' ></i></a></li>
+        </ul>
+        <hr class="separator">
         <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
     </footer>
 </body>

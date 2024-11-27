@@ -6,55 +6,87 @@
     <meta name="description" content="Tot ce trebuie să știi despre sănătatea și bunăstarea câinelui tău.">
     <title>PawTrack | Informații și Resurse pentru Sănătatea Câinilor</title>
     <link rel="icon" type="image/x-icon" href="DogIcon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="PawTrack.css">
-    <link rel="canonical">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
     <header>
-        <img class="logo" src="1.png" alt="PawTrack logo">
+        <img class="logo" src="2.png" alt="PawTrack logo">
+    </header>
     <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </label>
         <ul class="nav__link">
-            <li class="hideOnMobile"><a href="PawTrack.html">Acasă</a></li>
-            <li class="hideOnMobile"><a href="PawTrackSanatate.html">Sănătate</a>
-                <ul class="submenu">
-                    <li><a href="#">Nutriție</a></li>
-                    <li><a href="#">Vaccinuri</a></li>
-                    <li><a href="#">Probleme Comune</a></li>
+            <li><a href="PawTrack.html">Acasă</a></li>
+            <li><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu" id="sanatate">
+                    <li><a href="PawTrackSanatate.html#nutritie">Nutriție</a></li>
+                    <li><a href="PawTrackSanatate.html#vaccinuri">Vaccinuri</a></li>
+                    <li><a href="PawTrackSanatate.html#probleme-comune">Probleme Comune</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackBunastare.html">Bunăstare</a>
+            <li><a href="PawTrackBunastare.html">Bunăstare</a>
                 <ul class="submenu">
-                    <li><a href="#">Activități</a></li>
-                    <li><a href="#">Antrenament</a></li>
+                    <li><a href="PawTrackBunastare.html#activitati">Activități</a></li>
+                    <li><a href="PawTrackBunastare.html#antrenament">Antrenament</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+            <li><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
         </ul>
     </nav>
-    </header>
-    <section>
+    <section class="main">
         <div class="hero">
             <div class="herotext"> 
                 <h1>Totul despre <strong>Sănătatea</strong> și <strong>Bunăstarea</strong> Câinelui Tău</h1>
                 <p>Informații actualizate despre îngrijirea câinilor, sfaturi de nutriție și ghiduri pentru o viață fericită și sănătoasă alături de blănosul tău.</p>
-                <button class="buton"><a href="#">Află Mai Multe</a></button>
+                <button class="buton">Află Mai Multe</button>
             </div>
-            <img class="hero-image" src="happy-dog.jpg" alt="Imagine câine fericit">
+            <div class="hero-image" >
+                <img src="happydog.jpg" alt="Imagine câine fericit">
+            </div>
+        </div>
+        <div class="pattern">
+            <div class="slogan">
+            <p>Un câine sănătos este mai mult decât un prieten fericit – este o responsabilitate împlinită. Oferă-i grijă, afecțiune și atenție, iar el îți va răspunde cu loialitate și iubire necondiționată.</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <h1>Câini fericiți</h1>
+            <div class="photos">
+                <img src="cainefericit1.jpg" alt="Caine fericit">
+                <img src="cainefericit2.jpg" alt="Caine fericit">
+                <img src="cainefericit3.jpg" alt="Caine fericit">
+            </div>
+        </div>
+        <div class="description">
+            <div class="rezumat">
+                <h2>Importanța Îngrijirii Sănătății Câinelui Tău</h2>
+                <p>
+                    Sănătatea câinelui tău este esențială pentru o viață lungă și fericită. De la nutriție corectă, la verificări regulate la veterinar și activități care îl mențin activ, există multe aspecte pe care le poți integra în rutina zilnică a blănosului tău.
+                </p>
+                <ul>
+                    <li><strong>Nutriție echilibrată:</strong> O dietă adecvată îi oferă câinelui tău energia necesară pentru joacă și explorare.</li>
+                    <li><strong>Vizite regulate la veterinar:</strong> Monitorizarea sănătății previne și tratează problemele din timp.</li>
+                    <li><strong>Exerciții fizice:</strong> Activitățile regulate ajută la menținerea greutății și a sănătății articulare.</li>
+                    <li><strong>Îngrijire mentală:</strong> Antrenamentul și socializarea contribuie la bunăstarea psihică a câinelui.</li>
+                </ul>
+                <p>
+                    Îngrijirea câinilor nu este doar o responsabilitate, ci și o oportunitate de a crea o legătură profundă cu cel mai bun prieten al tău. Oferă-i timp, iubire și grijă, iar el îți va răsplăti eforturile cu loialitate necondiționată.
+                </p>
+            </div>
+            <div class="photo"><img src="dogvet.jpg" alt="Dog at the vet"></div>
         </div>
     </section>
     <footer>
-        <img class="smalllogo" src="3.png" alt="PawTrack logo mic">
-        <div class="socialmedia">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-youtube"></i></a>
-        </div>
-        <hr>
-        <div class="copyright">
-            <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
-        </div>
+        <ul class="logos">
+            <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a></li>
+            <li><a href="#"><i class='bx bxs-envelope' ></i></a></li>
+        </ul>
+        <hr class="separator">
+        <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
     </footer>
 </body>
 </html>

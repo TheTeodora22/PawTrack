@@ -6,51 +6,116 @@
     <meta name="description" content="Informații și resurse pentru bunăstarea câinilor, incluzând activități și antrenament.">
     <title>PawTrack | Bunăstarea Câinilor</title>
     <link rel="icon" type="image/x-icon" href="DogIcon.png">
-    <link rel="stylesheet" href="PawTrack.css">
+    <link rel="stylesheet" href="PawTrackBunastare.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
-        <img class="logo" src="PawTrackLogo.png" alt="PawTrack logo">
+        <img class="logo" src="2.png" alt="PawTrack logo">
     </header>
     <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </label>
         <ul class="nav__link">
-            <li class="hideOnMobile"><a href="PawTrack.html">Acasă</a></li>
-            <li class="hideOnMobile"><a href="PawTrackSanatate.html">Sănătate</a>
-                <ul class="submenu">
-                    <li><a href="#">Nutriție</a></li>
-                    <li><a href="#">Vaccinuri</a></li>
-                    <li><a href="#">Probleme Comune</a></li>
+            <li><a href="PawTrack.html">Acasă</a></li>
+            <li><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu" id="sanatate">
+                    <li><a href="PawTrackSanatate.html#nutritie">Nutriție</a></li>
+                    <li><a href="PawTrackSanatate.html#vaccinuri">Vaccinuri</a></li>
+                    <li><a href="PawTrackSanatate.html#probleme-comune">Probleme Comune</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackBunastare.html">Bunăstare</a>
+            <li><a href="PawTrackBunastare.html">Bunăstare</a>
                 <ul class="submenu">
-                    <li><a href="#">Activități</a></li>
-                    <li><a href="#">Antrenament</a></li>
+                    <li><a href="PawTrackBunastare.html#activitati">Activități</a></li>
+                    <li><a href="PawTrackBunastare.html#antrenament">Antrenament</a></li>
                 </ul>
             </li>
-            <li class="hideOnMobile"><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+            <li><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
         </ul>
     </nav>
-    <section>
+    <div class="main">
+    <section class="container">
         <h1>Bunăstarea Câinelui Tău</h1>
         <p>Descoperă sfaturi și activități pentru o viață fericită și echilibrată a câinelui tău.</p>
-        <h2>Activități Recomandate</h2>
-        <p>1. Activitatea fizică regulată este esențială pentru sănătatea câinelui. De la plimbări zilnice la alergări, menținerea unei rutine active ajută la prevenirea problemelor de sănătate.</p>
-        <p>2. Jocurile de aport sunt excelente pentru stimularea fizică și mentală. Aceasta îi oferă câinelui un mod de a-și consuma energia și de a se distra în același timp.</p>
-        <p>3. Explorările în aer liber, cum ar fi drumețiile, sunt ideale pentru câini activi, oferindu-le ocazia să descopere medii noi și să-și exerseze simțurile.</p>
-        <p>4. Înotul este o activitate relaxantă și sănătoasă, care contribuie la întărirea musculaturii și este benefică mai ales pentru câinii cu articulații sensibile.</p>
-        <p>5. Întâlnirile cu alți câini într-un parc canin sunt utile pentru socializare. Aceasta îi ajută să-și dezvolte abilitățile sociale și să se obișnuiască cu diverse situații.</p>
-        <p>6. Antrenamentele de agilitate sunt activități dinamice care le pun la încercare atenția, ascultarea și condiția fizică. Parcurgerea unui traseu de obstacole este și o metodă excelentă de disciplinare.</p>
-        <p>7. Joaca cu jucării interactive stimulează curiozitatea și inteligența câinilor, deoarece îi încurajează să găsească soluții pentru a obține recompense ascunse.</p>
-        <p>8. Relaxarea ghidată cu exerciții de stretching și masaj ajută la reducerea stresului și menține flexibilitatea câinelui.</p>
-        <p>9. Dresajul cu clicker-ul este o tehnică eficientă pentru învățarea comenzilor și comportamentelor dorite, întărind legătura între câine și stăpân.</p>
-        <p>10. Programarea unor activități în comun, cum ar fi vizite în locuri noi, consolidează încrederea și îi oferă câinelui noi experiențe.</p>
+        <h2 id="activitati">Activități Recomandate</h2>
+        <ol>
+            <li>
+                <strong>Activitatea fizică regulată:</strong> Este esențială pentru sănătatea câinelui. De la plimbări zilnice care mențin o greutate corporală sănătoasă până la alergări intense care stimulează musculatura, o rutină activă previne obezitatea și alte probleme de sănătate.
+            </li>
+            <li>
+                <strong>Jocurile de aport:</strong> Stimularea fizică și mentală prin jocuri de aport ajută câinele să-și consume energia și să-și exerseze instinctele naturale. Acest tip de activitate este ideal pentru câinii energici care iubesc mișcarea.
+            </li>
+            <li>
+                <strong>Explorările în aer liber:</strong> Drumețiile în natură sunt perfecte pentru câinii activi, oferindu-le ocazia să exploreze medii noi, să-și dezvolte simțurile și să petreacă timp de calitate cu stăpânii lor.
+            </li>
+            <li>
+                <strong>Înotul:</strong> O activitate relaxantă, care contribuie la întărirea musculaturii și susține sănătatea articulațiilor. Este ideal mai ales pentru câinii cu probleme de mobilitate sau artrită.
+            </li>
+            <li>
+                <strong>Socializarea în parcuri canine:</strong> Întâlnirile cu alți câini sunt esențiale pentru dezvoltarea abilităților sociale, reducerea anxietății și expunerea la diverse situații.
+            </li>
+            <li>
+                <strong>Antrenamentele de agilitate:</strong> Aceasta este o activitate complexă care stimulează câinele fizic și mental. Parcurgerea unui traseu cu obstacole dezvoltă disciplina, concentrarea și ascultarea.
+            </li>
+            <li>
+                <strong>Jucăriile interactive:</strong> Sunt ideale pentru stimularea inteligenței și curiozității. Câinii învață să găsească soluții pentru a obține recompense, ceea ce le menține mintea activă.
+            </li>
+            <li>
+                <strong>Relaxarea ghidată:</strong> Exercițiile de stretching și masaj reduc stresul, îmbunătățesc flexibilitatea și întăresc relația dintre câine și stăpân.
+            </li>
+            <li>
+                <strong>Dresajul cu clicker:</strong> O metodă eficientă de antrenament, care întărește comportamentele dorite și îmbunătățește comunicarea dintre câine și stăpân.
+            </li>
+            <li>
+                <strong>Activitățile comune:</strong> Vizitele în locuri noi sau participarea la evenimente speciale pentru câini oferă experiențe îmbogățitoare și întăresc legătura emoțională.
+            </li>
+        </ol>
         
-        <h2>Importanța Relației Emoționale</h2>
-        <p>1. Câinii au nevoie de o conexiune emoțională cu stăpânii lor, iar timpul petrecut împreună ajută la dezvoltarea încrederii și a stabilității emoționale.</p>
-        <p>2. Oferirea de atenție, afecțiune și stimulare mentală prin joacă ajută câinii să rămână echilibrați și fericiți.</p>
+        <h2 id="antrenament">Importanța Antrenamentului și Relației Emoționale</h2>
+        <ol>
+            <li>
+                <strong>Conexiunea emoțională:</strong> Câinii dezvoltă o legătură profundă cu stăpânii lor. Petrecerea timpului împreună, fie prin joacă, fie prin antrenament, întărește această relație, creând un mediu stabil și sigur pentru câine.
+            </li>
+            <li>
+                <strong>Stimularea mentală:</strong> Activitățile care implică rezolvarea de probleme, cum ar fi folosirea jucăriilor puzzle sau antrenamentele de ascultare, sunt excelente pentru menținerea sănătății mentale a câinelui.
+            </li>
+            <li>
+                <strong>Antrenamentele regulate:</strong> Începerea antrenamentelor încă de la o vârstă fragedă ajută la stabilirea unor reguli clare. Metodele pozitive, precum folosirea recompenselor, construiesc o relație bazată pe încredere.
+            </li>
+            <li>
+                <strong>Învățarea comenzilor esențiale:</strong> Comenzi precum „șezi”, „așteaptă” sau „vino” sunt cruciale pentru siguranța câinelui și pentru a-l ajuta să se adapteze în diverse situații.
+            </li>
+            <li>
+                <strong>Gestionarea comportamentelor nedorite:</strong> Antrenamentele ajută la corectarea comportamentelor, cum ar fi rosul obiectelor sau săritul pe oameni. Tehnicile consecvente și răbdarea sunt cheia succesului.
+            </li>
+            <li>
+                <strong>Socializarea controlată:</strong> Învățarea câinelui să interacționeze corespunzător cu alți câini și oameni îl face mai încrezător și mai echilibrat emoțional.
+            </li>
+            <li>
+                <strong>Exercițiile de relaxare:</strong> Activități precum exercițiile de respirație ghidată sau masajul contribuie la reducerea stresului și anxietății.
+            </li>
+            <li>
+                <strong>Activitățile în echipă:</strong> Participarea la competiții sau evenimente pentru câini întărește colaborarea dintre câine și stăpân, oferind satisfacție ambelor părți.
+            </li>
+            <li>
+                <strong>Consistența și rutina:</strong> Câinii prosperă în medii predictibile. Stabilirea unei rutine zilnice de antrenament și activități oferă câinelui tău siguranță și încredere.
+            </li>
+            <li>
+                <strong>Afecțiunea și recompensa:</strong> Împreună cu tehnicile de antrenament, oferirea de afecțiune și laude contribuie la bunăstarea emoțională și fizică a câinelui tău.
+            </li>
+        </ol>
     </section>
+    </div>    
     <footer>
+        <ul class="logos">
+            <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a></li>
+            <li><a href="#"><i class='bx bxs-envelope' ></i></a></li>
+        </ul>
+        <hr class="separator">
         <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
     </footer>
 </body>
