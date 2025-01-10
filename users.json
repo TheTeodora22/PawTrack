@@ -1,0 +1,12 @@
+[
+    {
+        "fullname": "John Doe",
+        "username": "johndoe",
+        "password": "Password123"
+    },
+    {
+        "fullname": "Maria Popescu",
+        "username": "maria123",
+        "password": "SecurePass1"
+    }
+]

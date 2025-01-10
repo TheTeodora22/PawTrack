@@ -40,7 +40,7 @@
     <div class="main">
     <section>
         <h1>Înregistrare</h1>
-        <form action="register.php" method="post">
+        <form onsubmit="event.preventDefault(); console.log('Form submitted!');">
 
             <div class="input-box">
             <label for="fullname">Nume complet:</label>
@@ -99,4 +99,5 @@
         <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
     </footer>
 </body>
+<script src="PawTrackRegister.js"></script>
 </html>
