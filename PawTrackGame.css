@@ -399,3 +399,24 @@ footer p {
         width: 100%;
     }
 }
+/* Canvas Area */
+.game-area {
+    margin: 20px auto;
+    position: relative;
+    height: 300px;
+    width: 80%;
+    border: 2px dashed #9A7E6F;
+    overflow: hidden; /* Prevents the dog from appearing outside the canvas */
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.dog {
+    width: 20%; /* Adjusted to ensure proper size in the canvas */
+    height: auto;
+    position: absolute;
+    transition: transform 0.3s ease; /* Smooth flipping animation */
+}
+
