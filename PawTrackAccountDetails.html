@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vizualizează detaliile contului tău PawTrack inclusiv informațiile despre câinele tău.">
+    <title>PawTrack | Detalii Cont</title>
+    <link rel="icon" type="image/x-icon" href="DogIcon.png">
+    <link rel="stylesheet" href="PawTrackAccountDetails.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <img class="logo" src="2.png" alt="PawTrack logo">
+    </header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </label>
+        <ul class="nav__link">
+            <li><a href="PawTrack.html">Acasă</a></li>
+            <li><a href="PawTrackSanatate.html">Sănătate</a></li>
+            <li><a href="PawTrackBunastare.html">Bunăstare</a></li>
+            <li><a href="PawTrackAccountDetails.html">Cont</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <section>
+            <h1>Detalii Cont</h1>
+            <div class="account-details">
+                <p><strong>Nume utilizator:</strong> <span id="username">JohnDoe</span></p>
+                <p><strong>Email:</strong> <span id="email">johndoe@example.com</span></p>
+                <p><strong>Nume câine:</strong> <span id="dog_name">Max</span></p>
+                <p><strong>Rasă câine:</strong> <span id="dog_breed">Golden Retriever</span></p>
+                <p><strong>Vârstă câine:</strong> <span id="dog_age">3</span> ani</p>
+            </div>
+            <button onClick="logout()">Logout</button>
+        </section>
+    </div>
+    <footer>
+        <ul class="logos">
+            <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+            <li><a href="#"><i class='bx bxs-envelope'></i></a></li>
+        </ul>
+        <hr class="separator">
+        <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+<script src="PawTrackAccountDetails.js"></script>
+<script src="logincheck.js"></script>
+</html>

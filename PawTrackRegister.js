@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirm_password");
+    const dogName = document.getElementById("dog_name");
+    const dogBreed = document.getElementById("dog_breed");
+    const dogAge = document.getElementById("dog_age");
 
     // Helper function: Validate email with regex
     const validateEmail = (email) => {
@@ -52,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         username: username.value,
                         email: email.value,
                         password: password.value,
+                        dog_name: dogName.value,
+                        dog_breed: dogBreed.value,
+                        dog_age: dogAge.value,
                     };
 
                     // Save user locally
@@ -66,3 +72,4 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch((error) => console.error("Error fetching users.json:", error));
     });
+});

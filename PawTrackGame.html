@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Health Game</title>
+    <link rel="stylesheet" href="PawTrackGame.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+    <header>
+        <img class="logo" src="2.png" alt="PawTrack logo">
+    </header>
+    <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </label>
+        <ul class="nav__link">
+            <li><a href="PawTrack.html">Acasă</a></li>
+            <li><a href="PawTrackSanatate.html">Sănătate</a>
+                <ul class="submenu" id="sanatate">
+                    <li><a href="PawTrackSanatate.html#nutritie">Nutriție</a></li>
+                    <li><a href="PawTrackSanatate.html#vaccinuri">Vaccinuri</a></li>
+                    <li><a href="PawTrackSanatate.html#probleme-comune">Probleme Comune</a></li>
+                </ul>
+            </li>
+            <li><a href="PawTrackBunastare.html">Bunăstare</a>
+                <ul class="submenu">
+                    <li><a href="PawTrackBunastare.html#activitati">Activități</a></li>
+                    <li><a href="PawTrackBunastare.html#antrenament">Antrenament</a></li>
+                </ul>
+            </li>
+            <li><a href="PawTrackLogin.html">Login/Înregistrare</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <h1>Dog Health Game</h1>
+            <p>Take care of your virtual dog!</p>
+        </div>
+        <div class="game-area" id="game-area">
+            <img src="chilldog.gif" alt="Dog" class="dog" id="dog">
+        </div>
+        <button id="feed">Feed</button>
+        <button id="play">Play</button>
+        <button id="clean">Clean</button>
+        <div id="stats-display"></div>
+    </main>
+    <footer>
+        <ul class="logos">
+            <li><a href="#"><i class='bx bxl-github'></i></a></li>
+            <li><a href="#"><i class='bx bxl-instagram-alt' ></i></a></li>
+            <li><a href="#"><i class='bx bxs-envelope' ></i></a></li>
+        </ul>
+        <hr class="separator">
+        <p>© 2024 PawTrack. Toate drepturile rezervate.</p>
+    </footer>
+    <script src="PawTrackGame.js"></script>
+</body>
+</html>

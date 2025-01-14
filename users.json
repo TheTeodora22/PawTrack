@@ -2,11 +2,19 @@
     {
         "fullname": "John Doe",
         "username": "johndoe",
-        "password": "Password123"
+        "email": "johndoe@example.com",
+        "password": "Password123",
+        "dog_name": "Max",
+        "dog_breed": "Golden Retriever",
+        "dog_age": 3
     },
     {
         "fullname": "Maria Popescu",
         "username": "maria123",
-        "password": "SecurePass1"
+        "email": "maria123@example.com",
+        "password": "SecurePass1",
+        "dog_name": "Bella",
+        "dog_breed": "Labrador",
+        "dog_age": 4
     }
 ]
