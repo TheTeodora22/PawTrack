@@ -2,7 +2,7 @@
     {
         "fullname": "John Doe",
         "username": "johndoe",
-        "email": "johndoe@example.com",
+        "email": "johndoe@gmail.com",
         "password": "Password123",
         "dog_name": "Max",
         "dog_breed": "Golden Retriever",
@@ -11,7 +11,7 @@
     {
         "fullname": "Maria Popescu",
         "username": "maria123",
-        "email": "maria123@example.com",
+        "email": "maria123@gmail.com",
         "password": "SecurePass1",
         "dog_name": "Bella",
         "dog_breed": "Labrador",
