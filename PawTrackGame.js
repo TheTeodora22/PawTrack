@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let mood = 100;
     let cleanliness = 100;
 
-    // Set up canvas
+
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = 500;
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.style.border = "1px solid #ccc";
     document.querySelector("main").appendChild(canvas);
 
-    // Dog sprite images
     const dogIdle = new Image();
     const dogRun = new Image();
     dogIdle.src = "chilldog.gif"; 
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentDogImage = dogIdle;
 
     const grassSVG = new Image();
-    grassSVG.src = "grass.svg"; // Replace with the path to your SVG file
+    grassSVG.src = "grass.svg"; 
 
     function highlightButton(btn) {
         btn.classList.add("active");
@@ -50,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
             gameArea.appendChild(effectElement);
         }
 
-        // Apply styles
         Object.assign(effectElement.style, style);
     }
     function removeEffect(effectId) {
@@ -61,12 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function drawBackground() {
-        const pattern = ctx.createPattern(grassSVG, "repeat"); // Create a repeating pattern
+        const pattern = ctx.createPattern(grassSVG, "repeat"); 
         ctx.fillStyle = pattern;
-        ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with the pattern
+        ctx.fillRect(0, 0, canvas.width, canvas.height); 
     }
 
-    // Function to draw the dog on the canvas
     function drawDog() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBackground();
@@ -141,16 +138,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mood = Math.min(mood + 10, 100);
         isRunning = true;
-        currentDogImage = dogRun; // Set the dog image to running
+        currentDogImage = dogRun; 
         runDogAround();
         updateStats();
     });
 
-    // Function to move the dog around the canvas
     function runDogAround() {
-        dx = (Math.random() - 0.5) * 5; // Random X direction
-        let dy = (Math.random() - 0.5) * 5; // Random Y direction
-        const steps = 300; // Number of animation frames
+        dx = (Math.random() - 0.5) * 5; 
+        let dy = (Math.random() - 0.5) * 5; 
+        const steps = 300; 
 
         let stepCount = 0;
 
@@ -160,16 +156,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 isRunning = false;
                 currentDogImage = dogIdle;
                 removeEffect("ball");
-                drawDog(); // Draw the idle dog at the final position
+                drawDog(); 
                 updateStats();
                 return;
             }
 
-            // Update dog position
+          
             dogX += dx;
             dogY += dy;
 
-            // Prevent the dog from moving out of bounds
+
             if (dogX < 0 || dogX + 80 > canvas.width) dx = -dx;
             if (dogY < 0 || dogY + 80 > canvas.height) dy = -dy;
 
@@ -178,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 30); // Update every 30ms
     }
 
-    // Create a settings form for resizing the canvas
+
     const settingsForm = document.createElement("form");
     settingsForm.innerHTML = `
         <label for="canvasWidth">Lățime Canvas (max 1000):</label>
@@ -189,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.querySelector("main").appendChild(settingsForm);
 
-    // Handle canvas resizing via form
+
     settingsForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -197,14 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const newHeight = parseInt(settingsForm.canvasHeight.value);
 
         if (newWidth > 0 && newWidth <= 1000 && newHeight > 0 && newHeight <= 900) {
-            // Resize canvas and adjust elements
+
             canvas.width = newWidth;
             canvas.height = newHeight;
 
-            dogX = Math.min(dogX, canvas.width - 80); // Ensure dog stays within bounds
+            dogX = Math.min(dogX, canvas.width - 80); 
             dogY = Math.min(dogY, canvas.height - 80);
 
-            drawDog(); // Redraw everything with new dimensions
+            drawDog(); 
         }
     });
 
@@ -214,7 +210,7 @@ setInterval(() => {
     cleanliness = Math.max(cleanliness - 1, 0);
 
     if (cleanliness < 50) {
-        // Add dirt SVG near the dog's feet
+
         addEffect("dirt", "dirt.svg", {
             position: "absolute",
             bottom: "10px",
@@ -231,19 +227,19 @@ setInterval(() => {
         alert("Game over! Câinele tău are nevoie de mai multă grijă.");
         window.location.reload();
     }
-}, 5000); // Check every 5 seconds
+}, 5000); 
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     const gameArea = document.getElementById("game-area");
 
-    // Highlight game area on click and display element details
-    gameArea.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevent the event from bubbling up
-        const clickedElement = event.target; // Get the clicked element
-        const currentArea = event.currentTarget; // Reference to the event's target container
 
-        // Add a temporary highlight class to the game area
+    gameArea.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const clickedElement = event.target; 
+        const currentArea = event.currentTarget; 
+
+
         currentArea.classList.add("highlight");
         setTimeout(() => currentArea.classList.remove("highlight"), 500);
 
@@ -253,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(`Background color of clicked element: ${bgColor}`);
     });
 
-    // Example: Toggling a class on the dog element when hovered
+
     const dogElement = document.getElementById("dog");
     dogElement.addEventListener("mouseenter", () => {
         dogElement.classList.add("hovered");
