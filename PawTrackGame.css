@@ -281,22 +281,13 @@ nav
 main {
     flex: 1; /* Ensures footer sticks to the bottom */
     text-align: center;
+
     padding: 20px;
     background-color: #F4F4F4;
+    width: 100vw;
 }
 
-.game-area {
-    margin: 20px auto;
-    position: relative;
-    height: 300px;
-    width: 80%;
-    border: 2px dashed #9A7E6F;
-}
 
-.dog {
-    width: 100px;
-    position: absolute;
-}
 
 /* Buttons */
 button {
@@ -404,9 +395,9 @@ footer p {
     margin: 20px auto;
     position: relative;
     height: 300px;
-    width: 80%;
+    width: 60%;
     border: 2px dashed #9A7E6F;
-    overflow: hidden; /* Prevents the dog from appearing outside the canvas */
+    overflow: hidden; 
     display: flex;
     align-items: center;
     align-content: center;
@@ -417,6 +408,79 @@ footer p {
     width: 20%; /* Adjusted to ensure proper size in the canvas */
     height: auto;
     position: absolute;
-    transition: transform 0.3s ease; /* Smooth flipping animation */
+}
+
+.effect {
+    pointer-events: none; /* Ensure effects don't interfere with clicks */
+    position: absolute;
+    z-index: 1; /* Ensure effects appear above other elements */
+}
+
+@media (max-width: 480px) {
+    .dog {
+        min-width: 120%;
+    }
+}
+@media (max-width: 1130px) {
+    .dog {
+        width: 30%;
+    }
+    .game-area{
+        width: 80%;
+    }
+}
+@media (max-width: 790px) {
+    .dog {
+        min-width: 50%;
+    }
+
+}
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #9A7E6F;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+#stats-display {
+    background-color: #9A7E6F;
+    padding: 20px;
+    border-radius: 10px;
+    border-width: 3px;
+    font-size: 18px;
+    margin: 20px auto;
+    width: 20%;
+    text-align: center;
+    box-shadow: 10px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 500;
+}
+form {
+    background-color: #F4F4F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input, form button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #9A7E6F;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #9A7E6F;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #836FFF;
 }
 

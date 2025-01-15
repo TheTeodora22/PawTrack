@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const playBtn = document.getElementById("play");
     const cleanBtn = document.getElementById("clean");
     const statsDisplay = document.getElementById("stats-display");
+    const gameArea = document.getElementById("game-area");
+    const dogElement = document.getElementById("dog");
 
     let health = 100;
     let mood = 100;
@@ -30,6 +32,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const grassSVG = new Image();
     grassSVG.src = "grass.svg"; // Replace with the path to your SVG file
+
+    function addEffect(effectId, effectSrc, style = {}) {
+        let effectElement = document.getElementById(effectId);
+
+        if (!effectElement) {
+            effectElement = document.createElement("img");
+            effectElement.id = effectId;
+            effectElement.src = effectSrc;
+            effectElement.alt = effectId;
+            effectElement.className = "effect";
+            gameArea.appendChild(effectElement);
+        }
+
+        // Apply styles
+        Object.assign(effectElement.style, style);
+    }
+    function removeEffect(effectId) {
+        const effectElement = document.getElementById(effectId);
+        if (effectElement) {
+            effectElement.remove();
+        }
+    }
 
     function drawBackground() {
         const pattern = ctx.createPattern(grassSVG, "repeat"); // Create a repeating pattern
@@ -64,9 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update stats display
     function updateStats() {
         statsDisplay.innerHTML = `
-            <p><strong>Health:</strong> ${health}</p>
-            <p><strong>Mood:</strong> ${mood}</p>
-            <p><strong>Cleanliness:</strong> ${cleanliness}</p>
+            <p><strong>Sănătate:</strong> ${health}</p>
+            <p><strong>Stare de spirit:</strong> ${mood}</p>
+            <p><strong>Curățenie:</strong> ${cleanliness}</p>
         `;
     }
 
@@ -76,16 +100,43 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event listeners for buttons
     feedBtn.addEventListener("click", () => {
         health = Math.min(health + 10, 100);
+
+        // Add food bowl SVG next to the dog
+        addEffect("food-bowl", "food-bowl.svg", {
+            position: "absolute",
+            bottom: "10px",
+            left: `${dogElement.offsetLeft - 60}px`,
+            width: "50px",
+        });
+
+        setTimeout(() => removeEffect("food-bowl"), 3000); // Remove after 3 seconds
         updateStats();
     });
 
     cleanBtn.addEventListener("click", () => {
         cleanliness = Math.min(cleanliness + 10, 100);
+
+        // Add bubbles SVG above the dog
+        addEffect("bubbles", "bubbles.svg", {
+            position: "absolute",
+            top: `${dogElement.offsetTop + 70}px`,
+            left: `${dogElement.offsetLeft }px`,
+            width: "50px",
+        });
+        setTimeout(() => removeEffect("bubbles"), 3000); // Remove after 3 seconds
         updateStats();
     });
 
     playBtn.addEventListener("click", () => {
         if (isRunning) return;
+
+        addEffect("ball", "ball.svg", {
+            position: "absolute",
+            bottom: "10px",
+            left: `${dogElement.offsetLeft + 100}px`,
+            width: "40px",
+        });
+
 
         mood = Math.min(mood + 10, 100);
         isRunning = true;
@@ -107,7 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearInterval(interval);
                 isRunning = false;
                 currentDogImage = dogIdle;
+                removeEffect("ball");
                 drawDog(); // Draw the idle dog at the final position
+                updateStats();
                 return;
             }
 
@@ -127,13 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create a settings form for resizing the canvas
     const settingsForm = document.createElement("form");
     settingsForm.innerHTML = `
-        <label for="canvasWidth">Canvas Width (max 500):</label>
+        <label for="canvasWidth">Lățime Canvas (max 1000):</label>
         <input type="number" id="canvasWidth" name="canvasWidth" value="${canvas.width}" max="1000" min="100" required>
-        <label for="canvasHeight">Canvas Height (max 400):</label>
+        <label for="canvasHeight">Înălțime Canvas (max 900):</label>
         <input type="number" id="canvasHeight" name="canvasHeight" value="${canvas.height}" max="900" min="100" required>
-        <button type="submit">Apply</button>
+        <button type="submit">Aplică</button>
     `;
-    settingsForm.style.margin = "10px";
     document.querySelector("main").appendChild(settingsForm);
 
     // Handle canvas resizing via form
@@ -154,4 +206,29 @@ document.addEventListener("DOMContentLoaded", () => {
             drawDog(); // Redraw everything with new dimensions
         }
     });
+
+setInterval(() => {
+    health = Math.max(health - 1, 0);
+    mood = Math.max(mood - 1, 0);
+    cleanliness = Math.max(cleanliness - 1, 0);
+
+    if (cleanliness < 50) {
+        // Add dirt SVG near the dog's feet
+        addEffect("dirt", "dirt.svg", {
+            position: "absolute",
+            bottom: "10px",
+            left: `${dogElement.offsetLeft + 20}px`,
+            width: "50px",
+        });
+    } else {
+        removeEffect("dirt");
+    }
+
+    updateStats();
+
+    if (health === 0 || mood === 0 || cleanliness === 0) {
+        alert("Game over! Câinele tău are nevoie de mai multă grijă.");
+        window.location.reload();
+    }
+}, 5000); // Check every 5 seconds
 });
