@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dog sprite images
     const dogIdle = new Image();
     const dogRun = new Image();
-    dogIdle.src = "chilldog.gif"; // Replace with your idle dog image
-    dogRun.src = "dogrun.gif"; // Replace with your running dog image
+    dogIdle.src = "chilldog.gif"; 
+    dogRun.src = "dogrun.gif"; 
 
     let dx = 0;
     let dogX = canvas.width / 2;
@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const grassSVG = new Image();
     grassSVG.src = "grass.svg"; // Replace with the path to your SVG file
+
+    function highlightButton(btn) {
+        btn.classList.add("active");
+        setTimeout(() => btn.classList.remove("active"), 500);
+    }
 
     function addEffect(effectId, effectSrc, style = {}) {
         let effectElement = document.getElementById(effectId);
@@ -66,26 +71,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBackground();
 
-        ctx.save(); // Save the current canvas state
+        ctx.save(); 
 
         if (dx > 0 || isRunning === false) {
-            // Dog moving to the right, normal orientation
             ctx.translate(dogX, dogY);
         } else {
-            // Dog moving to the left, flip horizontally
             ctx.scale(-1, 1);
-            ctx.translate(-dogX - 80, dogY); // Adjust for flipped orientation
+            ctx.translate(-dogX - 80, dogY);
         }
 
         ctx.drawImage(currentDogImage, 0, 0, 80, 80);
-        ctx.restore(); // Restore the canvas state
+        ctx.restore(); 
     }
 
     grassSVG.onload = () => {
-        drawDog(); // Initial draw with the SVG background
+        drawDog(); 
     };
 
-    // Update stats display
+
     function updateStats() {
         statsDisplay.innerHTML = `
             <p><strong>Sănătate:</strong> ${health}</p>
@@ -94,14 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    updateStats(); // Initial stats
-    drawDog(); // Initial draw
+    updateStats(); 
+    drawDog(); 
 
-    // Event listeners for buttons
+
     feedBtn.addEventListener("click", () => {
         health = Math.min(health + 10, 100);
 
-        // Add food bowl SVG next to the dog
         addEffect("food-bowl", "food-bowl.svg", {
             position: "absolute",
             bottom: "10px",
@@ -109,21 +111,20 @@ document.addEventListener("DOMContentLoaded", () => {
             width: "50px",
         });
 
-        setTimeout(() => removeEffect("food-bowl"), 3000); // Remove after 3 seconds
+        setTimeout(() => removeEffect("food-bowl"), 3000); 
         updateStats();
     });
 
     cleanBtn.addEventListener("click", () => {
         cleanliness = Math.min(cleanliness + 10, 100);
 
-        // Add bubbles SVG above the dog
         addEffect("bubbles", "bubbles.svg", {
             position: "absolute",
             top: `${dogElement.offsetTop + 70}px`,
             left: `${dogElement.offsetLeft }px`,
             width: "50px",
         });
-        setTimeout(() => removeEffect("bubbles"), 3000); // Remove after 3 seconds
+        setTimeout(() => removeEffect("bubbles"), 3000); 
         updateStats();
     });
 
@@ -232,3 +233,45 @@ setInterval(() => {
     }
 }, 5000); // Check every 5 seconds
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const gameArea = document.getElementById("game-area");
+
+    // Highlight game area on click and display element details
+    gameArea.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevent the event from bubbling up
+        const clickedElement = event.target; // Get the clicked element
+        const currentArea = event.currentTarget; // Reference to the event's target container
+
+        // Add a temporary highlight class to the game area
+        currentArea.classList.add("highlight");
+        setTimeout(() => currentArea.classList.remove("highlight"), 500);
+
+
+        const computedStyle = getComputedStyle(clickedElement);
+        const bgColor = computedStyle.backgroundColor || "none";
+        alert(`Background color of clicked element: ${bgColor}`);
+    });
+
+    // Example: Toggling a class on the dog element when hovered
+    const dogElement = document.getElementById("dog");
+    dogElement.addEventListener("mouseenter", () => {
+        dogElement.classList.add("hovered");
+    });
+    dogElement.addEventListener("mouseleave", () => {
+        dogElement.classList.remove("hovered");
+    });
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .highlight {
+            outline: 2px solid red;
+        }
+        .hovered {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+    `;
+    document.head.appendChild(style);
+});
+
