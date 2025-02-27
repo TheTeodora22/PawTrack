@@ -37,6 +37,12 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+  defaults:
+  - scope:
+      path: ""
+    values:
+      permalink: /PawTrack.html
+
 
   # Deployment job
   deploy:
